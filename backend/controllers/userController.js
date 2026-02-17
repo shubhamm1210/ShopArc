@@ -129,7 +129,8 @@ export const login = async (req, res) => {
       });
     }
 
-    const existingUser = await User.findOne({ email });
+    const existingUser = await User.findOne({ email }).select("+password");
+
     if (!existingUser) {
       return res.status(400).json({
         success: false,
@@ -149,13 +150,6 @@ export const login = async (req, res) => {
       });
     }
 
-    // if (existingUser.isVerified === false) {
-    //   return res.status(400).json({
-    //     success: false,
-    //     message: "Verify your account then login",
-    //   });
-    // }
-
     const accessToken = jwt.sign(
       { id: existingUser._id },
       process.env.JWT_SECRET,
@@ -171,14 +165,7 @@ export const login = async (req, res) => {
     existingUser.isLoggedIn = true;
     await existingUser.save();
 
-    const existingSession = await Session.findOne({
-      userId: existingUser._id,
-    });
-
-    if (existingSession) {
-      await Session.deleteOne({ userId: existingUser._id });
-    }
-
+    await Session.deleteMany({ userId: existingUser._id });
     await Session.create({ userId: existingUser._id });
 
     return res.status(200).json({
@@ -189,12 +176,14 @@ export const login = async (req, res) => {
       refreshToken,
     });
   } catch (error) {
+    console.error("LOGIN ERROR:", error); // ⭐ important
     return res.status(500).json({
       success: false,
       message: error.message,
     });
   }
 };
+
 
 // ================= LOGOUT =================
 export const logout = async (req, res) => {
