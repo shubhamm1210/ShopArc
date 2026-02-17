@@ -6,6 +6,8 @@ import productRoute from './routes/productRoute.js'
 import cors from 'cors'
 import cartRoute from './routes/cartRoute.js'
 import orderRoute from './routes/orderRoute.js'
+import morgan from 'morgan'
+
 
 
 
@@ -18,6 +20,7 @@ app.use(cors({
     origin:process.env.FRONTEND_URL,
     credentials:true
 }))
+app.use(morgan('dev'))
 
 app.use('/api/v1/user',userRoute)
 app.use('/api/v1/product',productRoute)

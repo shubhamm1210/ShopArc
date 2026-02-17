@@ -50,7 +50,8 @@ const Signup = () => {
                 }
             })
             if (res.data.success) {
-                navigate('/verify')
+                // navigate('/verify')
+                navigate('/')
                 toast.success(res.data.message)
             }
         } catch (error) {

@@ -23,21 +23,32 @@ const Navbar = () => {
 
 
     const logoutHandler = async () => {
-        try {
-            const res = await axios.post(`${import.meta.env.VITE_URL}/api/v1/user/logout`, {}, {
-            // const res = await axios.post(`http:///api/v1/user/logout`, {}, {   
-            headers: {
-                    Authorization: `Bearer ${accessToken}`
-                }
-            })
-            if (res.data.success) {
-                dispatch(setUser(null))
-                toast.success(res.data.message)
-            }
-        } catch (error) {
-            console.log(error);
-        }
+  try {
+    const token = localStorage.getItem("accessToken");
+
+    const res = await axios.post(
+      `${import.meta.env.VITE_URL}/api/v1/user/logout`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    if (res.data.success) {
+      dispatch(setUser(null));
+      dispatch(setCart({ items: [] }));
+      localStorage.removeItem("accessToken");
+      toast.success(res.data.message);
+      navigate("/login");
     }
+  } catch (error) {
+    console.log(error);
+    toast.error(error?.response?.data?.message || "Logout failed");
+  }
+};
+
 
     
     // const loadCart = async () => {
@@ -62,7 +73,7 @@ const Navbar = () => {
             <div className='max-w-7xl mx-auto flex justify-between items-center py-3'>
                 {/* logo section */}
                 <div>
-                    <img src="/Ekart.png" alt="" className='w-[100px]'/>
+                    <img src="/Ekart.png" alt="" className='w-25'/>
                     {/* <h1 className='font-bold text-2xl'>Ekart</h1> */}
                 </div>
                 {/* nav section */}
@@ -88,7 +99,7 @@ const Navbar = () => {
                     </Link>
                     {
                         user ? <Button onClick={logoutHandler} className='bg-pink-600 text-white cursor-pointer'>Logout</Button> :
-                            <Button onClick={() => navigate('/login')} className='bg-gradient-to-tl from-blue-600 to-purple-600 text-white cursor-pointer'>Login</Button>
+                            <Button onClick={() => navigate('/login')} className='bg-linear-to-tl from-blue-600 to-purple-600 text-white cursor-pointer'>Login</Button>
                     }
                     {/* {
                       user?<Button className='bg-pink-600 text-white cursor-pointer'>Logout</Button>:
