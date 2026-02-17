@@ -2,7 +2,7 @@ import crypto from "crypto";
 import razorpayInstance from "../config/razorpay.js";
 import { Order } from "../models/orderModel.js";
 import { Cart } from "../models/cartModel.js";
-import { User } from "../models/userModel.js";
+import { User } from "../models/temp.js";
 import { Product } from "../models/productModel.js";
 
 // Create Razorpay Order
