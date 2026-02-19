@@ -31,7 +31,7 @@ import { toast } from 'sonner';
   const getAllProducts = async () => {
     try {
       setLoading(true);
-      const res = await axios.get(`${import.meta.env.VITE_URL}/api/v1/product/getallproducts`);
+      const res = await axios.get(`${(import.meta.env.VITE_URL || import.meta.env.VITE_API_URL || "http://localhost:8000")}/api/v1/product/getallproducts`);
  //const res = await axios.get(`http://localhost:8000/api/v1/product/getallproducts`);
       if (res.data.success) {
         setAllProducts(res.data.products);
