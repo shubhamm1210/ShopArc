@@ -64,7 +64,7 @@ const Profile = () => {
             }
 
             const res = await axios.put(
-                `${import.meta.env.VITE_URL}/api/v1/user/update/${userId}`,
+                `${(import.meta.env.VITE_URL || import.meta.env.VITE_API_URL || "http://localhost:8000")}/api/v1/user/update/${userId}`,
                 formData,
                 {
                     headers: {
