@@ -1,70 +1,141 @@
-Hi there 👋
-👋 Hi there, I'm kundan saw!
-🚀 Full-Stack MERN Developer
+# 🛒 Mini Ekart — Full Stack E-Commerce App
 
-I’m a passionate and self-driven developer who loves building modern web applications with great UI/UX. With strong knowledge in both frontend and backend technologies, I enjoy turning ideas into real-world projects.
+Mini Ekart is a full-stack e-commerce web application built with the MERN stack.
+It supports user authentication, admin features, cart management, and Razorpay payments.
 
-🛠️ Tech Stack
-Frontend
-HTML5
-CSS3
-JavaScript
-React.js
-Bootstrap
-Tailwind CSS
-Backend
-Node.js
-Express.js
-MongoDB
-REST APIs
-Authentication & Tools
-JWT Authentication
-Git & GitHub
-Postman
-NodeMailer and Multer
-🎓 Education & Learning Journey
-🎓 Persuing Bachelorn Degree in field of CSE from NIAMT Ranchi
-🚀 My Projects
-ShopSparks – A full-stack food ordering website with secure auth & Stripe payments
-JobPortal – A student recruiter platform with real-time job applications
-e-commerece website-link:: mini ekart shopping site-https://mini-ekart-app-wv57.vercel.app/
-🤝 Let’s Connect
-📧 Email: kundansawvks786@gmail.com
-💼 LinkedIn: https://www.linkedin.com/in/kundansaw
-⭐ Thanks for visiting my profile!
-Keep learning, keep building 💙
+---
 
-Kundan62065/Kundan62065 is a special repository.
+## 🚀 Live Demo
 
-Its README.md will appear on your public profile.
+* 🌐 Frontend: https://mini-ekart-app-five.vercel.app/
+* ⚙️ Backend API: https://mini-ekart-backend.onrender.com
 
- 
-About
-Config files for my GitHub profile.
+---
 
-github.com/Kundan62065
-Topics
-config github-config
-Resources
- Readme
- Activity
-Stars
- 0 stars
-Watchers
- 1 watching
-Forks
- 0 forks
-Releases
-No releases published
-Create a new release
-Packages
-No packages published
-Publish your first package
-Footer
-© 2026 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Comm
+## ✨ Features
+
+### 👤 User Features
+
+* User registration and login (JWT based)
+* Browse products
+* Add to cart
+* Address management
+* Razorpay payment integration
+* Order placement and history
+
+### 🛠️ Admin Features
+
+* Admin dashboard
+* Product management
+* Order management
+* Sales overview
+
+---
+
+## 🏗️ Tech Stack
+
+**Frontend**
+
+* React (Vite)
+* Redux Toolkit
+* Tailwind CSS
+* Axios
+
+**Backend**
+
+* Node.js
+* Express.js
+* MongoDB (Atlas)
+* JWT Authentication
+* Multer (file upload)
+
+**Deployment**
+
+* Frontend → Vercel
+* Backend → Render
+* Database → MongoDB Atlas
+
+---
+
+## 📦 Installation (Local Setup)
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/YOUR-USERNAME/mini-ekart-app.git
+cd mini-ekart-app
+```
+
+---
+
+### 2️⃣ Backend setup
+
+```bash
+cd backend
+npm install
+```
+
+Create `.env` in backend:
+
+```
+PORT=8000
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_secret
+RAZORPAY_KEY_ID=your_key
+RAZORPAY_KEY_SECRET=your_secret
+```
+
+Run backend:
+
+```bash
+npm run dev
+```
+
+---
+
+### 3️⃣ Frontend setup
+
+```bash
+cd frontend
+npm install
+```
+
+Create `.env` in frontend:
+
+```
+VITE_API_URL=https://mini-ekart-backend.onrender.com
+VITE_RAZORPAY_KEY_ID=your_key
+```
+
+Run frontend:
+
+```bash
+npm run dev
+```
+
+---
+
+## 🔐 Environment Variables
+
+### Backend
+
+* `MONGO_URI`
+* `JWT_SECRET`
+* `RAZORPAY_KEY_ID`
+* `RAZORPAY_KEY_SECRET`
+
+### Frontend
+
+* `VITE_API_URL`
+* `VITE_RAZORPAY_KEY_ID`
+
+---
+
+## ⚠️ Notes
+
+* Render free tier may cause cold start delays (~30–60 seconds).
+* Ensure environment variables are properly configured in Vercel.
+* Do not commit `.env` files.
+
+---
+
