@@ -1,4 +1,4 @@
-# 🛒 Mini Ekart — Full Stack E-Commerce App
+# 🛒ShopArc— Full Stack E-Commerce App
 
 Mini Ekart is a full-stack e-commerce web application built with the MERN stack.
 It supports user authentication, admin features, cart management, and Razorpay payments.
