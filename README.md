@@ -1,14 +1,13 @@
-# 🛒ShopArc— Full Stack E-Commerce App
+# 🛒 ShopArc — Full-Stack E-Commerce Platform
 
-Mini Ekart is a full-stack e-commerce web application built with the MERN stack.
-It supports user authentication, admin features, cart management, and Razorpay payments.
+ShopArc is a full-stack e-commerce web application built using the MERN stack. It provides a complete shopping workflow with user authentication, product browsing, cart management, address handling, order placement, and Razorpay payment integration.
 
 ---
 
 ## 🚀 Live Demo
 
-* 🌐 Frontend: https://mini-ekart-app-five.vercel.app/
-* ⚙️ Backend API: https://mini-ekart-backend.onrender.com
+* 🌐 **Frontend:** https://mini-ekart-app-five.vercel.app/
+* ⚙️ **Backend API:** https://mini-ekart-backend.onrender.com
 
 ---
 
@@ -16,102 +15,118 @@ It supports user authentication, admin features, cart management, and Razorpay p
 
 ### 👤 User Features
 
-* User registration and login (JWT based)
-* Browse products
-* Add to cart
-* Address management
-* Razorpay payment integration
-* Order placement and history
+* User registration and login with JWT authentication
+* Browse available products
+* Add and manage products in the cart
+* Manage delivery addresses
+* Place orders using Razorpay
+* View previous orders and order history
 
 ### 🛠️ Admin Features
 
 * Admin dashboard
-* Product management
-* Order management
-* Sales overview
+* Add, update, and manage products
+* Manage customer orders
+* View sales overview
 
 ---
 
 ## 🏗️ Tech Stack
 
-**Frontend**
+### Frontend
 
-* React (Vite)
+* React.js with Vite
 * Redux Toolkit
 * Tailwind CSS
 * Axios
 
-**Backend**
+### Backend
 
 * Node.js
 * Express.js
-* MongoDB (Atlas)
+* MongoDB Atlas
 * JWT Authentication
-* Multer (file upload)
 
-**Deployment**
+### Deployment
 
-* Frontend → Vercel
-* Backend → Render
-* Database → MongoDB Atlas
+* **Frontend:** Vercel
+* **Backend:** Render
+* **Database:** MongoDB Atlas
 
 ---
 
-## 📦 Installation (Local Setup)
+## 📂 Project Structure
 
-### 1️⃣ Clone the repository
+```text
+ShopArc/
+├── frontend/
+│   ├── src/
+│   └── ...
+│
+├── backend/
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   └── ...
+│
+└── README.md
+```
+
+---
+
+## ⚙️ Local Setup
+
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/YOUR-USERNAME/mini-ekart-app.git
 cd mini-ekart-app
 ```
 
----
-
-### 2️⃣ Backend setup
+### 2. Set up the backend
 
 ```bash
 cd backend
 npm install
 ```
 
-Create `.env` in backend:
+Create a `.env` file inside the `backend` directory:
 
-```
+```env
 PORT=8000
 MONGO_URI=your_mongodb_uri
 JWT_SECRET=your_secret
-RAZORPAY_KEY_ID=your_key
-RAZORPAY_KEY_SECRET=your_secret
+
 ```
 
-Run backend:
+Start the backend:
 
 ```bash
 npm run dev
 ```
 
----
+### 3. Set up the frontend
 
-### 3️⃣ Frontend setup
+Open a new terminal:
 
 ```bash
 cd frontend
 npm install
 ```
 
-Create `.env` in frontend:
+Create a `.env` file inside the `frontend` directory:
 
-```
+```env
 VITE_API_URL=https://mini-ekart-backend.onrender.com
-VITE_RAZORPAY_KEY_ID=your_key
 ```
 
-Run frontend:
+Start the frontend:
 
 ```bash
 npm run dev
 ```
+
+The application will then be available on the local development server provided by Vite.
 
 ---
 
@@ -119,23 +134,33 @@ npm run dev
 
 ### Backend
 
-* `MONGO_URI`
-* `JWT_SECRET`
-* `RAZORPAY_KEY_ID`
-* `RAZORPAY_KEY_SECRET`
+| Variable              | Purpose                            |
+| --------------------- | ---------------------------------- |
+| `MONGO_URI`           | MongoDB connection string          |
+| `JWT_SECRET`          | Secret used for JWT authentication |
+           |
 
 ### Frontend
 
-* `VITE_API_URL`
-* `VITE_RAZORPAY_KEY_ID`
+| Variable               | Purpose             |
+| ---------------------- | ------------------- |
+| `VITE_API_URL`         | Backend API URL     |
 
 ---
 
 ## ⚠️ Notes
 
-* Render free tier may cause cold start delays (~30–60 seconds).
-* Ensure environment variables are properly configured in Vercel.
-* Do not commit `.env` files.
+* The backend is deployed on Render's free tier, so the first request may take some time if the service is inactive.
+* Make sure all required environment variables are configured before running the application.
+* Never commit `.env` files or expose secret keys in the repository.
 
 ---
 
+## 👨‍💻 Author
+
+**Shubham Kumar**
+
+Computer Engineering Undergraduate — NIAMT Ranchi
+
+* GitHub: https://github.com/shubhamm1210
+* LinkedIn: https://www.linkedin.com/in/shubhamkumar1210
